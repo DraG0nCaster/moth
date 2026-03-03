@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+main{
+    text-align: center;
+    margin: auto;
+    width: 900px;
+}
+
+main h1{
+    padding-top: 0.5em;
+}
+
+.individual-simulation{
+    cursor: pointer;
+}
+
+.simulation-before-start{
+    padding-top: 5%;
+    background-color: rgb(241, 241, 241);
+    margin: auto;
+    width: 900px;
+    height: 600px;
+}
+
+#simulation{
+    margin-top: 5%;
+}
+
+#simulation button{
+    padding: 1em 2em;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.simulation-before-start-content p{
+    font-size: 0.9em;
+}
+
+.chart-container{
+    width: 45%;
+    display: inline-block;
+}
+
+.charts{
+    margin-top: 2em;
+    display: flex;
+    justify-content: space-between;
+}
+
+#simulation-end-text {
+    z-index: 999;
+    position: absolute; 
+    margin-top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+}
+
+.export button{
+    width: 40%;
+    height: 40px;
+    margin-top: 10px;
+}
+
+.manual-rule-select{
+    margin-top: 10%;
+}
+
+.manual-rule-select button{
+    margin-top: 2%;
+}

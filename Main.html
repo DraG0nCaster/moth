@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Simulation</title>
+    <link rel="stylesheet" href="Main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/3.0.16/svg.min.js"></script>
+    <link rel="shortcut icon" href="images/individualSprite.png" type="image/png">
+</head>
+<body>
+    <main> 
+        <h1>Research Simulation</h1>
+        <p>This is a simulation for biological scientific research. Author: Damil Ginatullin</p>
+        <h2>Simulation rules</h2>
+        <p>
+            The simulation consists of a population of individuals represented as moths on a canvas.
+            Each individual starts with random color, and they move randomly within the canvas.
+            Background of the simulation changes color in the a certain time interval which you can set before the simulation.
+            When an individual is clicked, it is removed from the simulation, then a new individual is created in a random position.
+            This individual is child of random alive individual.
+            Children inherit the color of their parent and this color has a chance to mutate depending on the parent's mutation rate.
+            Mutation rate is also inhereted from the parent and has a small chance to change to.
+            One simulation lasts for 3 minutes.
+        </p>
+        <b>Your goal is to click on as many individuals as possible until the simulation ends.</b>
+        <h2>For the participants</h2>
+        <p>
+            After you read all instructions, click on the button with number 1 in the simulation window. Continue to clicking on the moths until the simulation ends (you would be told when it hapens).
+            After that click on button "Export data to excel sheet" and save this file somwhere on your computer.
+            Then restart page (presing F5 on your keyboard) and then click on the number 2 in the simulation window, repeating all previus steps.
+            Do the same for all four buttons and when you finish (which would take you around 12 minutes) send all files to me.
+            Thank you for your time.
+        </p>
+        <div id="simulation" class="simulation-before-start">
+            <a id="time-to-end"></a>
+            <div class="simulation-before-start-content">
+                <div class="participants-rule-select">
+                    <button onclick="handleStartButtonClick('constant')">1</button>
+                    <button onclick="handleStartButtonClick(30)">2</button>
+                    <button onclick="handleStartButtonClick(10)">3</button>
+                    <button onclick="handleStartButtonClick(1)">4</button>
+                </div>
+                <div class="manual-rule-select">
+                    <a>Select background change interval in second (or type 'constant' for constant background): </a>
+                    <input type="text" id="background-change-interval-input" value="constant">
+                    <button onclick="handleStartButtonClick(document.getElementById('background-change-interval-input').value)">Start Simulation</button>
+                </div>
+            </div>
+            <h1 id="simulation-end-text"></h1>
+        </div>
+        <div class="information">
+            <div class="charts">
+                <div class="chart-container"> 
+                    <canvas id="chartColor"></canvas>
+                    <a id="avarege-color"></a>
+                </div>
+                <div class="chart-container">
+                    <canvas id="chartMutationRate"></canvas>
+                    <a id="avarege-mutation-rate"></a>
+                </div>
+            </div>
+        </div> 
+        <div class="export">
+            <button onclick="exportDataToExcel()">Export data to excel sheet</button>
+        </div>
+    </main>
+    <script src="https://cdn.sheetjs.com/xlsx-latest/package/dist/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="Main.js"></script>
+</body>
+</html>
