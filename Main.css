@@ -74,3 +74,13 @@ main h1{
 .manual-rule-select button{
     margin-top: 2%;
 }
+
+@media (pointer: coarse) {
+    img {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        will-change: filter, transform;
+    }
+}
